@@ -10,6 +10,16 @@ export default defineConfig({
       '@cortex/shared': fileURLToPath(new URL('../../packages/shared/src', import.meta.url)),
     },
   },
+  server: {
+    host: true,
+    port: 5174,
+    strictPort: true,
+  },
+  preview: {
+    host: true,
+    port: 5174,
+    strictPort: true,
+  },
   optimizeDeps: {
     exclude: ['lucide-react'],
   },

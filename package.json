@@ -10,7 +10,7 @@
     "engine"
   ],
   "scripts": {
-    "dev": "npm run dev --workspace @cortex/user",
+    "dev": "concurrently -n user,admin -c cyan,amber \"npm run dev --workspace @cortex/user\" \"npm run dev --workspace @cortex/admin\"",
     "dev:user": "npm run dev --workspace @cortex/user",
     "dev:admin": "npm run dev --workspace @cortex/admin",
     "build": "npm run build --workspace @cortex/user && npm run build --workspace @cortex/admin",
@@ -26,6 +26,7 @@
     "eslint-plugin-react-refresh": "^0.4.11",
     "globals": "^15.9.0",
     "typescript": "^5.5.3",
-    "typescript-eslint": "^8.3.0"
+    "typescript-eslint": "^8.3.0",
+    "concurrently": "^9.0.1"
   }
 }
